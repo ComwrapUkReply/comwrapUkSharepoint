@@ -1,0 +1,32 @@
+/* // Block custom block */
+.blogs > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  grid-gap: 16px;
+}
+
+.blogs > ul > li {
+  border: 1px solid var(--dark-color);
+  background-color: var(--background-color);
+}
+
+.blogs .blogs-card-body {
+  margin: 16px;
+}
+
+.blogs .blogs-card-image {
+  line-height: 0;
+}
+
+.blogs .blogs-card-body > *:first-child {
+  margin-top: 0;
+}
+
+.blogs > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}

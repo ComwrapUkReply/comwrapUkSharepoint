@@ -1,0 +1,369 @@
+/* Carousel core block */
+.carousel .carousel-slides-container {
+  position: relative;
+}
+
+.carousel .carousel-slides,
+.carousel .carousel-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel .carousel-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-y: clip;
+}
+
+.carousel .carousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel .carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: min(40rem, calc(100svh - var(--nav-height)));
+}
+
+.carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
+  align-items: center;
+}
+
+.carousel .carousel-slide:has(.carousel-slide-content[data-align='right']) {
+  align-items: flex-end;
+}
+
+.carousel .carousel-slide .carousel-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel .carousel-slide .carousel-slide-image picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel .carousel-slide .carousel-slide-content {
+  z-index: 1;
+  padding: 1rem;
+  margin: 1.5rem 3rem;
+  color: var(--color-white);
+  background-color: rgba(0 0 0 / 50%);
+  position: relative;
+  width: var(--slide-content-width, auto);
+}
+
+.carousel .carousel-slide-indicators {
+  justify-content: center;
+  gap: 0.5rem;
+  display: none;
+}
+
+.carousel .carousel-slide-indicator button {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border-radius: 1rem;
+  background-color: rgba(0 0 0 / 25%);
+}
+
+.carousel .carousel-slide-indicator button:disabled,
+.carousel .carousel-slide-indicator button:hover,
+.carousel .carousel-slide-indicator button:focus-visible {
+  background-color: rgba(0 0 0 / 80%);
+}
+
+.carousel .carousel-slide-indicator span,
+.carousel .carousel-navigation-buttons span {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.carousel .carousel-navigation-buttons {
+  display: flex;
+  position: relative;
+  order: 2;
+  justify-content: center;
+  inset: 0;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.carousel .carousel-navigation-buttons button {
+  position: relative;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.carousel .carousel-navigation-buttons button:is(:hover, :focus, :focus-visible) {
+  background: none;
+}
+
+.carousel .carousel-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 1px white solid;
+  border-bottom: 0;
+  border-left: 0;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 3px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+  border-color: var(--color-nocturnal-blue);
+  width: 25px;
+  height: 25px;
+  border-width: 1px;
+}
+
+.carousel .carousel-navigation-buttons button:hover::after {
+  border-color: var(--color-black);
+}
+
+.carousel .carousel-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 3px);
+}
+
+/* Testimonial carousel */
+main .testimonial-section {
+  background-color: var(--color-western-snow);
+  box-shadow: 0 0 0 100vmax var(--color-western-snow);
+  clip-path: inset(0 -100vmax);
+  padding: var(--spacing-s) var(--spacing-l);
+}
+
+.testimonial-carousel {
+  background-color: var(--color-western-snow);
+  box-shadow: 0 0 0 100vmax var(--color-western-snow);
+  clip-path: inset(0 -100vmax);
+  transform: translateY(0);
+  text-align: center;
+}
+
+.testimonial-carousel nav {
+  display: none;
+}
+
+.testimonial-carousel .carousel-slides-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-carousel .carousel-slides {
+  min-height: auto;
+  order: 1;
+  width: 100vw;
+  scrollbar-width: none;
+}
+
+.testimonial-carousel  .carousel-slide {
+  min-height: auto;
+}
+
+.testimonial-carousel  .carousel-slide h3 {
+  margin-bottom: var(--spacing-xxs);
+  font-family: var(--font-family-regular);
+}
+
+.testimonial-carousel  .carousel-slide h4 {
+  font-size: var(--heading-font-size-s);
+  font-family: var(--font-family-extralight);
+  margin-bottom: 0;
+}
+
+.testimonial-carousel  .carousel-slide p:last-child {
+  margin-bottom: 0;
+}
+
+.testimonial-carousel .carousel-slide-image {
+  margin: 0 1rem;
+}
+
+.testimonial-carousel .icon {
+  height: 60px;
+  display: block;
+}
+
+.testimonial-carousel .icon img {
+  height: 100%;
+}
+
+/* Image Carousel */
+
+.section.image-carousel-container {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.image-carousel .carousel-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xs);
+}
+
+.image-carousel .carousel-navigation-buttons button {
+  border-color: var(--color-white);
+}
+
+.image-carousel .carousel-navigation-buttons button::after {
+  border-color: var(--color-white);
+}
+
+.image-carousel .carousel-slide {
+  margin: 0;
+  justify-content: end;
+}
+
+.image-carousel .carousel-slide .carousel-slide-content {
+  background-color: transparent;
+  margin: 0;
+  padding: 0 var(--spacing-xs);
+}
+
+.image-carousel .image-carousel-content h2 {
+  color: var(--color-white);
+  font-size: var(--heading-font-size-l);
+}
+
+.image-carousel .carousel-slide-content .button-container {
+  display: none;
+}
+
+.image-carousel .carousel-slide-content .button-container .button {
+  min-width: 170px;
+}
+
+.image-carousel .carousel-slide .carousel-slide-image picture {
+  background: var(--color-nocturnal-blue);
+}
+
+.image-carousel .carousel-slide .carousel-slide-image img {
+  opacity: 50%;
+} 
+
+/* Carousel Responsive styles */
+
+@media (width >= 600px) {
+  .carousel .carousel-slide .carousel-slide-content {
+    --slide-content-width: 50%;
+
+    margin: 2.5rem 5rem;
+  }
+
+  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
+    --slide-content-width: auto;
+  }
+}
+
+
+/* Carousel Desktop styles */
+
+@media (width >= 900px) {
+  .carousel .carousel-navigation-buttons {
+    justify-content: space-between; 
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .carousel .carousel-slide .carousel-slide-content {
+    --slide-content-width: 50%;
+    
+    margin: 2.5rem 5rem;
+  }
+
+  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
+    --slide-content-width: auto;
+  }
+
+  /* Testimonial Carousel */
+
+  .testimonial-carousel .carousel-slides {
+    max-width: 80%;
+  }
+
+  .testimonial-carousel  .carousel-slide {
+    margin-bottom: 0;
+  }
+
+  /* Image Carousel */
+
+  .image-carousel .carousel-navigation-buttons {
+    transform: translate(-50%, -50%);
+    padding: 0 var(--spacing-l);
+  }
+
+  .image-carousel .carousel-slide .carousel-slide-content {
+    --slide-content-width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin: 0 auto var(--spacing-xxxl);
+  }
+
+  .image-carousel .image-carousel-content h2 {
+    margin-bottom: var(--spacing-m);
+  }
+
+  .image-carousel .image-carousel-content p:last-child{
+    margin-bottom: 0;
+  }
+
+  .image-carousel .carousel-slide-content .image-carousel-buttons {
+    width: 70%;
+    display: flex;
+    justify-content: end;
+    gap: 24px;
+  }
+
+  .image-carousel .carousel-slide-content .button-container {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .image-carousel .image-carousel-buttons .button-container:nth-child(2) .button {
+    background: var(--color-nocturnal-blue);
+  }
+
+  .image-carousel .image-carousel-buttons .button-container:nth-child(2) .button:hover {
+    background-color: var(--color-white);
+    color: var(--color-nocturnal-blue);
+  }
+
+  .image-carousel .carousel-navigation-buttons button:hover::after {
+    border-color: var(--color-nocturnal-blue);
+  }
+}

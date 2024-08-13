@@ -1,0 +1,77 @@
+
+@media (width <= 899px) {
+    .info-graphic {
+        min-width: 100%;
+        position: relative;
+        padding-bottom: 2rem;
+    }
+
+    .span-arrow {
+        position: relative;
+    }
+
+    @keyframes shift {
+        0% {
+            transform: translateX(-50px);
+          }
+
+          50% {
+            transform: translateX(50px);
+          }
+        
+          100% {
+            transform: translateX(-50px);
+          }
+    }
+
+    .span-arrow {
+        margin-inline: auto;
+        width: 50%;
+        height: 1px;
+        padding: 0;
+        border-bottom: 1px solid var(--color-rocky-road);
+        overflow: visible;
+        animation: shift 2s ease-in-out infinite;
+    }
+    
+    .span-arrow::before,
+    .span-arrow::after {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        bottom: -6px;
+        border-left: 1px solid rgb(255 255 255 / 0%);
+        border-top: 1px solid rgb(255 255 255 / 0%);
+        border-right: 1px solid rgb(0 0 0 / 50%);
+        border-bottom: 1px solid rgb(0 0 0 / 50%);
+    }
+    
+    .span-arrow::before {
+        left: 1px;
+        transform: rotate(135deg);
+    }
+
+    .span-arrow::after {
+        right: 1px;
+        transform: rotate(-45deg);
+    }
+
+
+    .info-graphic-img {
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+    }
+
+
+     .info-graphic-img::-webkit-scrollbar {
+        display: none;
+    }
+
+    .info-graphic-img picture img {
+        min-height: 100%;
+        max-width: fit-content;
+        min-width: 100vh;
+    }
+}

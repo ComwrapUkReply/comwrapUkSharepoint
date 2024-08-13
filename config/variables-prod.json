@@ -1,0 +1,21 @@
+{
+    "total": 1,
+    "offset": 0,
+    "limit": 1,
+    "data": [
+      {
+        "Item": "$system:mylocality$",
+        "Value": "prod"
+      },{
+        "Item": "$system:trackingscript$",
+        "Value": "https://assets.adobedtm.com/d4e187856f02/84a8f19b48f1/launch-9fc11833104d.min.js"
+      }, {
+        "Item": "$system:abtastyscript$",
+        "Value": "https://try.abtasty.com/54d41c1c745275ad6d723c2122a0693d.js"
+      },{
+        "Item": "$system:cookiebotid$",
+        "Value": "747c7864-bf4d-4b8f-9e92-69d5eb6be267"
+      }
+    ],
+    ":type": "fallback"
+  }

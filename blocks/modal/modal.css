@@ -1,0 +1,212 @@
+body.modal-open {
+    overflow: hidden;
+  }
+  
+  .modal dialog {
+    border-radius: 12px;
+    padding: 0;
+    overscroll-behavior: none;
+    background-image: url('');
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .modal dialog .modal-content {
+    max-height: calc(100dvh - 60px);
+  }
+
+
+  .modal-content {
+  scrollbar-width: thick;
+  scrollbar-color: linear-gradient(#9F1E78, #DD1E3C); 
+  overflow-y: scroll; 
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #212a35; 
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background:  linear-gradient(#9F1E78, #DD1E3C); 
+  border-radius: 10px; 
+}
+  
+  @media (width >= 600px) {
+    .modal dialog {
+      width: clamp(70%, 24rem, 100%);
+      margin-inline: auto;
+
+    }
+  
+    .modal dialog .modal-content {
+      max-height: calc(100vh - 200px);
+    }
+  }
+  
+  .modal dialog::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+  }
+  
+  .modal .close-button {
+    position: absolute;
+    z-index: 1;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: unset;
+    text-overflow: clip;
+    margin: 0;
+    border: 1px solid var(--color-white);
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(100% 100% 100% 20%);
+    }
+  }
+
+  .modal .close-button img{
+    filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(3%) hue-rotate(343deg) brightness(70%) contrast(101%);
+  }
+
+  .modal dialog .section {
+    padding: 0;
+  }
+
+  .modal-content .modal-hero {
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 2rem;
+  }
+
+  @media (width >= 900px) {
+    .modal-content .modal-hero {
+     margin: auto 0 0;
+    }
+  }
+
+
+  .modal-content .hero-page {
+    height: auto;
+  }
+
+  @media (width >= 900px) {
+    .modal-content .hero-page {
+      height: 665px;
+      height: calc(100dvh - 500px);
+    }
+  }
+
+.modal-content .modal-hero::before {
+    position: relative;
+}
+
+.modal-content .modal-hero>div>div::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    bottom: 2rem;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    background: 
+      linear-gradient(0deg, 
+      rgb(33 42 53 / 100%) 40%, 
+      rgb(33 42 53 / 80%) 60%,
+      rgb(33 42 53 / 40%) 80%, 
+      rgb(33 42 53 / 0%) 100%);
+}
+
+.modal-content .modal-hero div {   
+    text-align: center;
+}
+
+.modal-content .modal-hero div > * {
+    color: var(--color-white);
+    margin-bottom: 0;
+}
+
+.modal-content .modal-hero div > h2,
+.modal-content .modal-hero div > p:last-child,
+.modal-content .modal-hero div > h3 {
+  position: relative;
+  z-index: 4;
+}
+
+
+.modal-content .modal-hero div > h2 {
+    margin-bottom: var(--spacing-xxxxs);
+    font-size: var(--heading-font-size-m);
+}
+
+.modal-content .modal-hero div > h3 {
+    margin-bottom: var(--spacing-xxxxs);
+    font-size: var(--heading-font-size-s);
+}
+
+.modal-content .modal-hero div > p {
+  margin-bottom: var(--spacing-xxxxs);
+  font-size: var(--heading-font-size-s);
+}
+
+.modal-content .hero-image::before {
+    display: none;
+}
+
+.modal-content .current-date {
+    min-height: 30px
+}
+
+.modal-content .section {
+    background: none;
+}
+
+@media (width >= 900px) {
+  .modal-content .modal-hero>div>div::before {
+    height: 500px;
+  }
+
+  .modal-content .modal-hero div > h2,
+  .modal-content .modal-hero div > h3 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .modal-content .modal-hero div > h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+  .modal-content .modal-hero div > h3 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  .modal-content .modal-hero div > p {
+    font-size: var(--heading-font-size-s);
+  }
+}
+
+.flipin {
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+  animation: flip 1s forwards;
+}
+
+
+@keyframes flip{
+  0% {
+    transform: scale(0.7);
+
+    opacity: 0%;
+  }
+  45% {
+    transform:scale(1.05);
+
+    opacity: 100%;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

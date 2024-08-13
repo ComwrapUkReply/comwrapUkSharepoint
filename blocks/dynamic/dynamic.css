@@ -1,0 +1,131 @@
+/* stylelint-disable color-function-notation */
+@import url('../cards/cards.css');
+
+.dynamic-container .button-container {
+  text-align: center;
+}
+
+.dynamic {
+  position: relative;
+  margin: 0;
+}
+
+.dynamic.blog {
+  background-color: var(--color-white);
+  box-shadow: none;
+}
+
+.dynamic.flexible-cards .cards-container {
+  column-count: 1;
+}
+
+.dynamic.flexible-cards .cards-container li {
+  opacity: 100%;
+}
+
+.dynamic.flexible-cards .cards-container li.visible {
+  animation: slidein 0.5s forwards;
+}
+
+.dynamic.flexible-cards .cards-container li.hide {
+  display: none;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(10px);
+    opacity: 0%;
+  }
+  to {
+    transform: translate(0);
+    opacity: 100%;
+  }
+}
+
+@media (width >= 700px) {
+  .dynamic.flexible-cards .cards-container  {
+    column-count: 2;
+  }
+}
+
+@media (width >= 900px) {
+  .dynamic.flexible-cards .cards-container  {
+    column-count: 3;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters ul {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters ul li {
+  margin: 0;
+}
+.reset-btn,
+.filter-resource li button,
+.filter-service li button {
+  border-radius: 25px;
+  padding: 0.3rem 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  border-style: solid;
+}
+
+.reset-btn {
+  border-color: var(--color-nocturnal-blue);
+  color: var(--color-nocturnal-blue);
+}
+
+.reset-btn:hover {
+  background: var(--color-nocturnal-blue);
+  color: var(--color-white);
+}
+
+.filter-service li button {
+  border-color: var(--color-heart-red);
+  color: var(--color-heart-red);
+
+  &:hover {
+    background: rgba(249, 19, 81, 80%);
+    color: var(--color-white);
+    border-color: var(--color-heart-red);
+  }
+
+  &.active {
+    background: var(--color-heart-red);
+    color: var(--color-white);
+    border-color: var(--color-heart-red);
+  }
+}
+
+.filter-resource li button {
+  border-color: var(--color-dark-blue);
+  color: var(--color-dark-blue);
+  
+  
+  &:hover {
+    background: rgba(0, 103, 179, 80%);
+    color: var(--color-white);
+    border-color: var(--color-dark-blue);
+  }
+
+  &.active {
+    background: var(--color-dark-blue);
+    color: var(--color-white);
+    border-color: var(--color-dark-blue);
+  }
+}
+

@@ -1,0 +1,16 @@
+/* // Client custom block */
+.clients {
+  display: grid;
+  display: flex;
+  margin-inline: auto;
+  gap: 1rem;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.client {
+  display: flex;
+  min-width: 200px;
+  align-items: center;
+  justify-content: center;
+}
